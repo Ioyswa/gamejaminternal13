@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=4 uid="uid://d38dbe1rtwjq8"]
+
+[ext_resource type="PackedScene" uid="uid://dtu5ff0403ak4" path="res://scene/hide_zone.tscn" id="1_1hc4l"]
+[ext_resource type="PackedScene" uid="uid://bcacplqdymka0" path="res://scene/player.tscn" id="2_thbi8"]
+[ext_resource type="PackedScene" uid="uid://bb0pgrmv31ybo" path="res://scene/enemy.tscn" id="3_thbi8"]
+[ext_resource type="Texture2D" uid="uid://dueohcohekhw3" path="res://icon.svg" id="4_errqf"]
+[ext_resource type="PackedScene" uid="uid://v31kbb8mvrx7" path="res://object/key_card_door.tscn" id="5_7hwpa"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_errqf"]
+vertices = PackedVector2Array(474, 426, 1142, 638, 10, 638, 438, 426, 10, 10, 438, 262, 1142, 10, 474, 262)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(7, 6, 1, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 0, 648, 1152, 648, 1152, 0)])
+agent_radius = 4.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7hwpa"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tgtg8"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gysvc"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0t6wo"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7hwpa"]
+texture = ExtResource("4_errqf")
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gysvc")
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_0t6wo")
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_7hwpa")
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tgtg8")
+
+[sub_resource type="TileSet" id="TileSet_tgtg8"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 7
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_7hwpa")
+
+[node name="TestWorld" type="Node2D"]
+
+[node name="HideZone" parent="." instance=ExtResource("1_1hc4l")]
+position = Vector2(352, 96)
+
+[node name="Player" parent="." instance=ExtResource("2_thbi8")]
+position = Vector2(656, 248)
+
+[node name="Enemy" parent="." instance=ExtResource("3_thbi8")]
+position = Vector2(352, 360)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_errqf")
+
+[node name="World" type="TileMapLayer" parent="NavigationRegion2D"]
+modulate = Color(0, 0, 0, 1)
+tile_map_data = PackedByteArray("AAAcABQAAAACAAMAAAAcABUAAAACAAMAAAAcABYAAAACAAMAAAAcABcAAAACAAMAAAAcABgAAAACAAMAAAAcABkAAAACAAMAAAAcABMAAAACAAMAAAAcABIAAAACAAMAAAAcABEAAAACAAMAAAA=")
+tile_set = SubResource("TileSet_tgtg8")
+
+[node name="KeyCardDoor" parent="." instance=ExtResource("5_7hwpa")]
+position = Vector2(936, 368)

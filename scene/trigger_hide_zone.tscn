@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuefepmw6tmga"]
+
+[ext_resource type="Script" uid="uid://bydbdvwyutqmk" path="res://scene/trigger_hide_zone.gd" id="1_lhtng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psp7g"]
+size = Vector2(216, 58)
+
+[node name="TriggerHideZone" type="Area2D"]
+script = ExtResource("1_lhtng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_psp7g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

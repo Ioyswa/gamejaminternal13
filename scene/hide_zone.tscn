@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtu5ff0403ak4"]
+
+[ext_resource type="Script" uid="uid://c3lrhddh4y68a" path="res://scene/hide_zone.gd" id="1_c5gbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fb3i"]
+size = Vector2(204, 336)
+
+[node name="HideZone" type="Area2D"]
+collision_layer = 16
+collision_mask = 36
+script = ExtResource("1_c5gbt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3fb3i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

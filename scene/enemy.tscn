@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb0pgrmv31ybo"]
+
+[ext_resource type="Script" uid="uid://pjm5v2he77du" path="res://scene/enemy.gd" id="1_f87vc"]
+[ext_resource type="Texture2D" uid="uid://dueohcohekhw3" path="res://icon.svg" id="1_h08p8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f87vc"]
+radius = 32.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_f87vc")
+vision_distance = 400.0
+vision_angle = 65.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(18.892157, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_h08p8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f87vc")
+
+[node name="VisionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="VisionShape" type="CollisionPolygon2D" parent="VisionArea"]
+polygon = PackedVector2Array(0, 0, -192, 320, 192, 320)
+
+[node name="VisionVisual" type="Polygon2D" parent="VisionArea"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 0)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 8.0
+target_desired_distance = 32.0
+path_max_distance = 800.0
+path_postprocessing = 1
+debug_enabled = true

@@ -1,0 +1,19 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1761398911
+icon.svg::CompressedTexture2D::8572159100310012052::1761314456::1761314469::1::::<><><>0<>0<>fb2578f7ab1c104d5a90c6d4c09f49af<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1761376515
+Stage 2.png::CompressedTexture2D::2237011090642038472::1761376356::1761376515::1::::<><><>0<>0<>2f7d7aae66e0486dce18cd1745c30747<>res://.godot/imported/Stage 2.png-73bc96f573c0c02fd9cc2ac22515779e.ctex::
+::res://object/::1761374401
+key_card_door.gd::GDScript::6762393110873288568::1761374401::0::1::::<>Node2D<><>0<>0<><>::
+key_card_door.tscn::PackedScene::1533364848847736250::1761374401::0::1::::<><><>0<>0<><>::uid://dueohcohekhw3::::res://icon.svg<>uid://c3l0vkjpnsev5::::res://object/key_card_door.gd
+::res://scene/::1761379957
+cone.gd::GDScript::7439140486438563805::1761357174::0::1::::VisionCone2D<>Node2D<><>0<>0<><>::
+enemy.gd::GDScript::1072195377112128602::1761379310::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemy.tscn::PackedScene::2509141353264770624::1761375148::0::1::::<><><>0<>0<><>::uid://pjm5v2he77du::::res://scene/enemy.gd<>uid://dueohcohekhw3::::res://icon.svg
+hide_zone.gd::GDScript::6761881996542376206::1761315901::0::1::::<>Area2D<><>0<>0<><>::
+hide_zone.tscn::PackedScene::8535968376624630081::1761379848::0::1::::<><><>0<>0<><>::uid://c3lrhddh4y68a::::res://scene/hide_zone.gd
+level_1.tscn::PackedScene::445566976386589948::1761379957::0::1::::<><><>0<>0<><>::uid://v31kbb8mvrx7::::res://object/key_card_door.tscn<>uid://dueohcohekhw3::::res://icon.svg<>uid://bb0pgrmv31ybo::::res://scene/enemy.tscn<>uid://bcacplqdymka0::::res://scene/player.tscn<>uid://64vimgfo11ei::::res://assets/Stage 2.png<>uid://dtu5ff0403ak4::::res://scene/hide_zone.tscn<>uid://cuefepmw6tmga::::res://scene/trigger_hide_zone.tscn
+player.gd::GDScript::8113074449302971938::1761372707::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::2526947194505856001::1761379671::0::1::::<><><>0<>0<><>::uid://dnubfem2u6fla::::res://scene/player.gd<>uid://dueohcohekhw3::::res://icon.svg
+test_world.tscn::PackedScene::9192858326657370469::1761373853::0::1::::<><><>0<>0<><>::uid://dtu5ff0403ak4::::res://scene/hide_zone.tscn<>uid://bcacplqdymka0::::res://scene/player.tscn<>uid://bb0pgrmv31ybo::::res://scene/enemy.tscn<>uid://dueohcohekhw3::::res://icon.svg<>uid://v31kbb8mvrx7::::res://object/key_card_door.tscn
+trigger_hide_zone.tscn::PackedScene::6185187286732212548::1761379909::0::1::::<><><>0<>0<><>::
