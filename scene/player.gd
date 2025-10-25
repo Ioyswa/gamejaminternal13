@@ -4,7 +4,11 @@ extends CharacterBody2D
 const SPEED = 500.0
 var is_hiding := false
 var can_hide := false
-var is_have_key_card := true
+
+var is_have_key_card := false
+var can_interact_with_keycard := false
+var current_keycard: Area2D = null
+
 
 var default_layer: int
 var default_mask: int
@@ -26,22 +30,30 @@ func _handle_movement(delta):
 	move_and_slide()
 
 func _handle_hide_input():
-	if can_hide and Input.is_action_just_pressed("interact"):
-		is_hiding = not is_hiding
-		if is_hiding:
-			print("🕶️ Player bersembunyi.")
-			visible = false   # sembunyikan sprite player
-			collision_layer = 32
-			collision_mask = 32
-			#$CollisionShape2D.disabled = true  # opsional, kalau kamu mau musuh tidak nabrak player
-		else:
-			print("👀 Player keluar dari persembunyian.")
-			visible = true
-			collision_layer = default_layer
-			collision_mask = default_mask
-			
-			#$CollisionShape2D.disabled = false
+	if Input.is_action_just_pressed("interact"):
+		if can_hide:
+			_toggle_hide()
+		elif can_interact_with_keycard and current_keycard:
+			_pickup_keycard(current_keycard)
 
+func _pickup_keycard(card: Area2D):
+	if not is_have_key_card:
+		print("Player picked up keycard:", card.key_name)
+		is_have_key_card = true
+		card.collect()
+		print("kartu dah diambil")
+		# Bisa tambahkan efek suara, animasi, atau notifikasi UI di sini
+	else:
+		print("Player sudah punya keycard.")
+
+func _toggle_hide():
+	is_hiding = not is_hiding
+	if is_hiding:
+		print("🕶️ Player bersembunyi.")
+		visible = false
+	else:
+		print("👀 Player keluar dari persembunyian.")
+		visible = true
 
 func _on_hide_spot_entered(area):
 	can_hide = true
