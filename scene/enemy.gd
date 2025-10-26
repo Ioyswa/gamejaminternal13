@@ -41,6 +41,7 @@ var memory_timer := 0.0
 # -------------------------------------------------------------
 func _ready():
 	# --- Connect signals ---
+	$CatchZone.connect("body_entered", Callable(self, "_on_catch_zone_entered"))
 	vision_area.connect("body_entered", Callable(self, "_on_body_entered"))
 	vision_area.connect("body_exited", Callable(self, "_on_body_exited"))
 
@@ -206,3 +207,8 @@ func _update_vision_cone():
 		Vector2(vision_distance * cos(half_angle), vision_distance * sin(half_angle))
 	]
 	$VisionArea/VisionShape.polygon = points
+
+func _on_catch_zone_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		print("Player tertangkap!")
+		body._on_caught_by_enemy()

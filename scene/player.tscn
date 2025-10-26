@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcacplqdymka0"]
+[gd_scene load_steps=5 format=3 uid="uid://bcacplqdymka0"]
 
 [ext_resource type="Script" uid="uid://dnubfem2u6fla" path="res://scene/player.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://dueohcohekhw3" path="res://icon.svg" id="1_xo3ru"]
+[ext_resource type="AudioStream" uid="uid://cl88a7dqhojfe" path="res://assets/Audio/footstep.mp3" id="3_fvtld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjaqi"]
 size = Vector2(64, 64)
@@ -9,10 +10,11 @@ size = Vector2(64, 64)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(1.5, 1.5)
 collision_layer = 4
-collision_mask = 27
+collision_mask = 155
 script = ExtResource("1_hjaqi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 18.892157, 18.892157, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_xo3ru")
 
@@ -21,3 +23,7 @@ shape = SubResource("RectangleShape2D_hjaqi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fvtld")
+volume_db = -6.0

@@ -1,21 +1,42 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761407587
+::res://::1761435189
 icon.svg::CompressedTexture2D::8572159100310012052::1761314456::1761314469::1::::<><><>0<>0<>fb2578f7ab1c104d5a90c6d4c09f49af<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://assets/::1761407293
+::res://assets/::1761435800
+ID Card.png::CompressedTexture2D::8971223882661829848::1761431978::1761432014::1::::<><><>0<>0<>787737af25b6709bb2062d3a18608e9e<>res://.godot/imported/ID Card.png-d9ba0017ebdfb027d0e4fa423ac8635a.ctex::
+Machine Tap ID Card.png::CompressedTexture2D::7969997133665362074::1761431990::1761432014::1::::<><><>0<>0<>70c9e8170c8a7081202045527d8ef0b9<>res://.godot/imported/Machine Tap ID Card.png-d58c5f081eddfe5047e84daf5068d53b.ctex::
+Stage 1.png::CompressedTexture2D::7085348365099844909::1761432103::1761432104::1::::<><><>0<>0<>44982059ba282e9d08a665921e9fa73f<>res://.godot/imported/Stage 1.png-03281698741e621a5e3c8e2dff8cbd11.ctex::
 Stage 2.png::CompressedTexture2D::2237011090642038472::1761407290::1761407293::1::::<><><>0<>0<>2f7d7aae66e0486dce18cd1745c30747<>res://.godot/imported/Stage 2.png-73bc96f573c0c02fd9cc2ac22515779e.ctex::
-::res://object/::1761405054
-key_card_door.gd::GDScript::6762393110873288568::1761374401::0::1::::<>Node2D<><>0<>0<><>::
-key_card_door.tscn::PackedScene::1533364848847736250::1761405054::0::1::::<><><>0<>0<><>::uid://dueohcohekhw3::::res://icon.svg<>uid://c3l0vkjpnsev5::::res://object/key_card_door.gd
-::res://scene/::1761407587
+Stage 3.png::CompressedTexture2D::5677419778732863919::1761435800::1761435804::1::::<><><>0<>0<>449868ddb5f252888903f346519fb7ce<>res://.godot/imported/Stage 3.png-f89db685e04262d3cac0201f3f7ea924.ctex::
+::res://assets/Audio/::1761434939
+beep-id-card.mp3::AudioStreamMP3::6476830774684171907::1761433418::1761433435::1::::<><><>0<>0<>0e4d5eb4523392bd227d4c1d213ebc90<>res://.godot/imported/beep-id-card.mp3-5b81bc4a5a1fc72e000fb3c51a3aaa29.mp3str::
+caught.mp3::AudioStreamMP3::1183206656803626914::1761434936::1761434939::1::::<><><>0<>0<>05836d90c24114605693dfab8f0e3f36<>res://.godot/imported/caught.mp3-227d06139686d45acdf85a222793929b.mp3str::
+footstep.mp3::AudioStreamMP3::5615048460168324082::1761433433::1761433435::1::::<><><>0<>0<>aa7613b866eaecb4ac8c0e2846a93488<>res://.godot/imported/footstep.mp3-accfdc2d012f3c67139c137f1cc3d520.mp3str::
+::res://Data/::1761434284
+Data.gd::GDScript::2153587192296179354::1761434284::0::1::::<>Node<><>0<>0<><>::
+::res://object/::1761433863
+key_card.gd::GDScript::4361277841987644336::1761408982::0::1::::<>Area2D<><>0<>0<><>::
+key_card.tscn::PackedScene::7054967691120802841::1761433863::0::1::::<><><>0<>0<><>::uid://b3evux35ymrvc::::res://object/key_card.gd<>uid://d02y0nd0seuom::::res://assets/ID Card.png
+key_card_door.gd::GDScript::6762393110873288568::1761433521::0::1::::<>Node2D<><>0<>0<><>::
+key_card_door.tscn::PackedScene::1533364848847736250::1761432815::0::1::::<><><>0<>0<><>::uid://dueohcohekhw3::::res://icon.svg<>uid://c3l0vkjpnsev5::::res://object/key_card_door.gd
+vertical_key_card_door.tscn::PackedScene::5752476920342456287::1761433521::0::1::::<><><>0<>0<><>::uid://c3l0vkjpnsev5::::res://object/key_card_door.gd<>uid://dueohcohekhw3::::res://icon.svg<>uid://dlsyxn0kw0rx7::::res://assets/Machine Tap ID Card.png<>uid://cyjopr2rjgmbr::::res://assets/Audio/beep-id-card.mp3
+::res://scene/::1761435581
 cone.gd::GDScript::7439140486438563805::1761357174::0::1::::VisionCone2D<>Node2D<><>0<>0<><>::
-enemy.gd::GDScript::1072195377112128602::1761401591::0::1::::<>CharacterBody2D<><>0<>0<><>::
-enemy.tscn::PackedScene::2509141353264770624::1761375148::0::1::::<><><>0<>0<><>::uid://pjm5v2he77du::::res://scene/enemy.gd<>uid://dueohcohekhw3::::res://icon.svg
+enemy.gd::GDScript::1072195377112128602::1761435291::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemy.tscn::PackedScene::2509141353264770624::1761435193::0::1::::<><><>0<>0<><>::uid://pjm5v2he77du::::res://scene/enemy.gd<>uid://dueohcohekhw3::::res://icon.svg
 hide_zone.gd::GDScript::6761881996542376206::1761400047::0::1::::<>Area2D<><>0<>0<><>::
 hide_zone.tscn::PackedScene::8535968376624630081::1761402254::0::1::::<><><>0<>0<><>::uid://c3lrhddh4y68a::::res://scene/hide_zone.gd
-level_2.tscn::PackedScene::445566976386589948::1761407588::0::1::::<><><>0<>0<><>::uid://64vimgfo11ei::::res://assets/Stage 2.png<>uid://dueohcohekhw3::::res://icon.svg<>uid://v31kbb8mvrx7::::res://object/key_card_door.tscn<>uid://bb0pgrmv31ybo::::res://scene/enemy.tscn<>uid://bcacplqdymka0::::res://scene/player.tscn<>uid://dtu5ff0403ak4::::res://scene/hide_zone.tscn
-player.gd::GDScript::8113074449302971938::1761402186::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::2526947194505856001::1761402186::0::1::::<><><>0<>0<><>::uid://dnubfem2u6fla::::res://scene/player.gd<>uid://dueohcohekhw3::::res://icon.svg
+player.gd::GDScript::8113074449302971938::1761435581::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::2526947194505856001::1761435581::0::1::::<><><>0<>0<><>::uid://dnubfem2u6fla::::res://scene/player.gd<>uid://dueohcohekhw3::::res://icon.svg<>uid://cl88a7dqhojfe::::res://assets/Audio/footstep.mp3
 test_world.tscn::PackedScene::9192858326657370469::1761373853::0::1::::<><><>0<>0<><>::uid://dtu5ff0403ak4::::res://scene/hide_zone.tscn<>uid://bcacplqdymka0::::res://scene/player.tscn<>uid://bb0pgrmv31ybo::::res://scene/enemy.tscn<>uid://dueohcohekhw3::::res://icon.svg<>uid://v31kbb8mvrx7::::res://object/key_card_door.tscn
 trigger_hide_zone.gd::GDScript::4077213276736531514::1761399207::0::1::::<>Area2D<><>0<>0<><>::
 trigger_hide_zone.tscn::PackedScene::6185187286732212548::1761399207::0::1::::<><><>0<>0<><>::uid://bydbdvwyutqmk::::res://scene/trigger_hide_zone.gd
-::res://scene/level/::0
+::res://scene/level/::1761435634
+level_1.tscn::PackedScene::7533360795292132878::1761434024::0::1::::<><><>0<>0<><>::uid://c77gwgftmthij::::res://assets/Stage 1.png<>uid://dcfir0q0r586p::::res://scene/level/level_1.gd<>uid://dueohcohekhw3::::res://icon.svg<>uid://bcacplqdymka0::::res://scene/player.tscn<>uid://c7rqj06k6rbin::::res://object/key_card.tscn<>uid://cn7sppk7a8upj::::res://object/vertical_key_card_door.tscn
+level_2.tscn::PackedScene::445566976386589948::1761435634::0::1::::<><><>0<>0<><>::uid://dueohcohekhw3::::res://icon.svg<>uid://64vimgfo11ei::::res://assets/Stage 2.png<>uid://v31kbb8mvrx7::::res://object/key_card_door.tscn<>uid://bb0pgrmv31ybo::::res://scene/enemy.tscn<>uid://bcacplqdymka0::::res://scene/player.tscn<>uid://dtu5ff0403ak4::::res://scene/hide_zone.tscn<>uid://c7rqj06k6rbin::::res://object/key_card.tscn
+level_1.gd::GDScript::7310479060524627665::1761434348::0::1::::<>Node2D<><>0<>0<><>::
+::res://UI/::1761435470
+next_level.tscn::PackedScene::3938597867030679049::1761434348::0::1::::<><><>0<>0<><>::uid://deid34srbt7n7::::res://UI/next_level.gd
+next_level.gd::GDScript::7456766152629703842::1761434309::0::1::::<>Control<><>0<>0<><>::
+game_over.tscn::PackedScene::2216270587970713785::1761435470::0::1::::<><><>0<>0<><>::uid://bkwfl4owap8oi::::res://UI/game_over.gd
+game_over.gd::GDScript::3134050205164149664::1761435470::0::1::::<>Control<><>0<>0<><>::
+button.gd::GDScript::7226992084755615064::1761434782::0::1::::<>Button<><>0<>0<><>::

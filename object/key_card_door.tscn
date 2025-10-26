@@ -1,51 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://v31kbb8mvrx7"]
+[gd_scene load_steps=7 format=3 uid="uid://v31kbb8mvrx7"]
 
 [ext_resource type="Texture2D" uid="uid://dueohcohekhw3" path="res://icon.svg" id="1_mfn3v"]
 [ext_resource type="Script" uid="uid://c3l0vkjpnsev5" path="res://object/key_card_door.gd" id="1_ohvju"]
+[ext_resource type="Texture2D" uid="uid://dlsyxn0kw0rx7" path="res://assets/Machine Tap ID Card.png" id="3_hrt6b"]
+[ext_resource type="AudioStream" uid="uid://cyjopr2rjgmbr" path="res://assets/Audio/beep-id-card.mp3" id="4_i4ein"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfn3v"]
-size = Vector2(320, 10)
+size = Vector2(904, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohvju"]
-size = Vector2(320, 64)
-
-[sub_resource type="Animation" id="Animation_hrt6b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_gk4sv"]
-resource_name = "open_door"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.09482053, 0.19679733, 0.3005632, 0.39896184),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.43633232, 0.87266463, 1.3089969, 1.5707964]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4ein"]
-_data = {
-&"RESET": SubResource("Animation_hrt6b"),
-&"open_door": SubResource("Animation_gk4sv")
-}
+size = Vector2(192, 154)
 
 [node name="KeyCardDoor" type="StaticBody2D"]
 collision_mask = 4
@@ -64,13 +28,17 @@ shape = SubResource("RectangleShape2D_mfn3v")
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
-position = Vector2(0, 32)
+position = Vector2(272, 168)
 shape = SubResource("RectangleShape2D_ohvju")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_i4ein")
-}
+[node name="MachineTapIdCard" type="Sprite2D" parent="InteractZone"]
+position = Vector2(264, 56.000008)
+scale = Vector2(0.0231289, 0.023128899)
+texture = ExtResource("3_hrt6b")
+
+[node name="CardBeepSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(272, 56)
+stream = ExtResource("4_i4ein")
 
 [connection signal="body_entered" from="InteractZone" to="." method="_on_interact_zone_body_entered"]
 [connection signal="body_exited" from="InteractZone" to="." method="_on_interact_zone_body_exited"]

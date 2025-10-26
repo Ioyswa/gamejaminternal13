@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://gl3om8yb2lua"]
+[gd_scene load_steps=15 format=4 uid="uid://gl3om8yb2lua"]
 
+[ext_resource type="Script" uid="uid://clndh82t6n642" path="res://scene/level/level_2.gd" id="1_5hpuw"]
 [ext_resource type="Texture2D" uid="uid://dueohcohekhw3" path="res://icon.svg" id="1_ede0d"]
 [ext_resource type="Texture2D" uid="uid://64vimgfo11ei" path="res://assets/Stage 2.png" id="2_yxtpv"]
 [ext_resource type="PackedScene" uid="uid://v31kbb8mvrx7" path="res://object/key_card_door.tscn" id="3_5hpuw"]
@@ -20,7 +21,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-7.8174677, -7.5128903, 8.223568, -8.122044, 8.122043, 7.918993, -8.020518, 8.020518)])
 agent_radius = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53ndp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sdw4g"]
 texture = ExtResource("1_ede0d")
 2:3/0 = 0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -31,11 +32,15 @@ tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
 navigation_layer_0/layers = 1
-sources/0 = SubResource("TileSetAtlasSource_53ndp")
+sources/0 = SubResource("TileSetAtlasSource_sdw4g")
 
 [sub_resource type="TileSet" id="TileSet_53ndp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuerm"]
+size = Vector2(281, 146)
+
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_5hpuw")
 
 [node name="Navigation" type="Node2D" parent="."]
 
@@ -78,6 +83,25 @@ position = Vector2(600, 560)
 [node name="PatrolPoint4" type="Node2D" parent="Enemy"]
 position = Vector2(464, -232)
 
+[node name="Enemy2" parent="." node_paths=PackedStringArray("point1", "point2", "point3", "point4") instance=ExtResource("4_sdw4g")]
+position = Vector2(452, 396)
+point1 = NodePath("PatrolPoint1")
+point2 = NodePath("PatrolPoint2")
+point3 = NodePath("PatrolPoint3")
+point4 = NodePath("PatrolPoint4")
+
+[node name="PatrolPoint1" type="Node2D" parent="Enemy2"]
+position = Vector2(-317, -318)
+
+[node name="PatrolPoint2" type="Node2D" parent="Enemy2"]
+position = Vector2(-296, 427)
+
+[node name="PatrolPoint3" type="Node2D" parent="Enemy2"]
+position = Vector2(356, 666)
+
+[node name="PatrolPoint4" type="Node2D" parent="Enemy2"]
+position = Vector2(315, -324)
+
 [node name="Player" parent="." instance=ExtResource("5_nuerm")]
 position = Vector2(226, 1395)
 
@@ -89,3 +113,13 @@ position = Vector2(136, 538)
 
 [node name="KeyCard" parent="." instance=ExtResource("7_yxtpv")]
 position = Vector2(-465, -130)
+
+[node name="TrigerWin" type="Area2D" parent="."]
+position = Vector2(440, -1529)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrigerWin"]
+position = Vector2(13.5, -4)
+shape = SubResource("RectangleShape2D_nuerm")
+
+[connection signal="body_entered" from="TrigerWin" to="." method="_on_triger_win_body_entered"]

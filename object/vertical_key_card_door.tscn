@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn7sppk7a8upj"]
+
+[ext_resource type="Script" uid="uid://c3l0vkjpnsev5" path="res://object/key_card_door.gd" id="1_s1qb5"]
+[ext_resource type="Texture2D" uid="uid://dueohcohekhw3" path="res://icon.svg" id="2_6mald"]
+[ext_resource type="Texture2D" uid="uid://dlsyxn0kw0rx7" path="res://assets/Machine Tap ID Card.png" id="3_6mald"]
+[ext_resource type="AudioStream" uid="uid://cyjopr2rjgmbr" path="res://assets/Audio/beep-id-card.mp3" id="4_72ptl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfn3v"]
+size = Vector2(904, 10.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohvju"]
+size = Vector2(256, 154)
+
+[node name="VerticalKeyCardDoor" type="StaticBody2D"]
+rotation = -1.5707964
+collision_mask = 4
+script = ExtResource("1_s1qb5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 18.892157, 1)
+position = Vector2(-5.1367188, -2.1457672e-06)
+scale = Vector2(1.0085543, 0.062499966)
+texture = ExtResource("2_6mald")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 2.842171e-14)
+shape = SubResource("RectangleShape2D_mfn3v")
+
+[node name="InteractZone" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
+position = Vector2(248, 128.00002)
+shape = SubResource("RectangleShape2D_ohvju")
+
+[node name="MachineTapIdCard" type="Sprite2D" parent="InteractZone"]
+position = Vector2(352.00003, 128.00002)
+scale = Vector2(0.015591835, 0.015591836)
+texture = ExtResource("3_6mald")
+
+[node name="CardBeepSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(352, 128.00002)
+stream = ExtResource("4_72ptl")
+
+[connection signal="body_entered" from="InteractZone" to="." method="_on_interact_zone_body_entered"]
+[connection signal="body_exited" from="InteractZone" to="." method="_on_interact_zone_body_exited"]

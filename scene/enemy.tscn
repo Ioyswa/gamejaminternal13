@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb0pgrmv31ybo"]
+[gd_scene load_steps=5 format=3 uid="uid://bb0pgrmv31ybo"]
 
 [ext_resource type="Script" uid="uid://pjm5v2he77du" path="res://scene/enemy.gd" id="1_f87vc"]
 [ext_resource type="Texture2D" uid="uid://dueohcohekhw3" path="res://icon.svg" id="1_h08p8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f87vc"]
 radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8u16h"]
+radius = 48.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -39,3 +42,10 @@ target_desired_distance = 32.0
 path_max_distance = 800.0
 path_postprocessing = 1
 debug_enabled = true
+
+[node name="CatchZone" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatchZone"]
+shape = SubResource("CircleShape2D_8u16h")
