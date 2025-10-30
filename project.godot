@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Project"
+config/name="Breakout Shift"
+run/main_scene="uid://c6ew57cmkhc2x"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://b0dy7u8sd3nkn"
 
 [autoload]
 
@@ -22,6 +23,7 @@ Data="*res://Data/Data.gd"
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [input]
 

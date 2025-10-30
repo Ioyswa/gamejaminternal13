@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwd5ep64rnx7v"]
+[gd_scene load_steps=3 format=3 uid="uid://bwd5ep64rnx7v"]
 
 [ext_resource type="Script" uid="uid://deid34srbt7n7" path="res://UI/next_level.gd" id="1_n74b3"]
+[ext_resource type="Texture2D" uid="uid://cstoovqv3n15r" path="res://assets/Next Level.png" id="2_q4lj5"]
 
 [node name="NextLevel" type="Control"]
 layout_mode = 3
@@ -19,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="StoryLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -28,8 +29,7 @@ offset_left = -44.5
 offset_right = 44.5
 offset_bottom = 67.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 48
-text = "Win"
+theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -40,13 +40,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -224.5
-offset_top = -32.0
-offset_right = 224.5
-offset_bottom = 32.0
+offset_left = -189.0
+offset_top = -69.0
+offset_right = 189.0
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 36
-text = "Next Level"
+icon = ExtResource("2_q4lj5")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

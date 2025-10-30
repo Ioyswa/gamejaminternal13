@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6ew57cmkhc2x"]
+
+[ext_resource type="Script" uid="uid://c16rk6di21hi2" path="res://UI/main_menu.gd" id="1_tk8dj"]
+[ext_resource type="Texture2D" uid="uid://bj1hq31viery6" path="res://assets/MainMenuBG.png" id="2_tk8dj"]
+[ext_resource type="Texture2D" uid="uid://dgr7lj7aj554v" path="res://assets/Start.png" id="3_4cwpn"]
+[ext_resource type="AudioStream" uid="uid://ci3he4m4mrvo4" path="res://assets/Audio/Start-screen.mp3" id="3_d8nwk"]
+[ext_resource type="Texture2D" uid="uid://cdiu76li4fppt" path="res://assets/Quit.png" id="4_f40uw"]
+[ext_resource type="Texture2D" uid="uid://8e8nyk02lkaf" path="res://assets/Title.png" id="6_8ctay"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tk8dj")
+
+[node name="MainMenuBg2" type="Sprite2D" parent="."]
+position = Vector2(496, 360)
+scale = Vector2(0.32824075, 0.3319444)
+texture = ExtResource("2_tk8dj")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148
+anchor_top = 0.356
+anchor_right = 0.148
+anchor_bottom = 0.356
+offset_left = -79.84
+offset_top = -16.320007
+offset_right = 136.16
+offset_bottom = 63.679993
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+theme_override_icons/icon = ExtResource("3_4cwpn")
+icon = ExtResource("3_4cwpn")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148
+anchor_top = 0.53300005
+anchor_right = 0.148
+anchor_bottom = 0.53300005
+offset_left = -71.84
+offset_top = -39.76004
+offset_right = 136.16
+offset_bottom = 48.23996
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "
+"
+icon = ExtResource("4_f40uw")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_d8nwk")
+volume_db = -6.0
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(207.99998, 200)
+scale = Vector2(0.65094334, 0.6509434)
+texture = ExtResource("6_8ctay")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="finished" from="Music" to="." method="_on_audio_stream_player_2d_finished"]
